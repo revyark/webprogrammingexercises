@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Textbox Color Change</title>
+</head>
+<body>
+    <input type="text" id="textBox" style="background-color: green;" placeholder="Type something">
+    <script>
+        let textBox = document.getElementById("textBox");
+        textBox.addEventListener("focus", function() {
+            textBox.style.backgroundColor = "yellow";
+        });
+        textBox.addEventListener("blur", function() {
+            textBox.style.backgroundColor = "green";
+        });
+        textBox.addEventListener("change", function() {
+            alert("Hello! You changed the text.");
+        });
+    </script>
+</body>
+</html>

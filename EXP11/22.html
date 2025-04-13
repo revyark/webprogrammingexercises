@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculate Age</title>
+</head>
+<body>
+    <label for="dob">Enter Date of Birth:</label>
+    <input type="date" id="dob">
+    <p id="age"></p>
+    <script>
+        document.getElementById("dob").addEventListener("mouseover", function() {
+            let dob = new Date(this.value);
+            let today = new Date();
+            let age = today.getFullYear() - dob.getFullYear();
+            let monthDiff = today.getMonth() - dob.getMonth();
+            if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < dob.getDate())) {
+                age--;
+            }
+            document.getElementById("age").innerText = "Your Age: " + age;
+        });
+    </script>
+</body>
+</html>

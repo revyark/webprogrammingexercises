@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keypress Counter</title>
+</head>
+<body>
+    <input type="text" id="textInput" placeholder="Type here">
+    <input type="text" id="counter" value="0" readonly>
+    <script>
+        let textInput = document.getElementById("textInput");
+        let counter = document.getElementById("counter");
+        let count = 0;
+        textInput.addEventListener("keydown", function() {
+            count++;
+            counter.value = count;
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic List</title>
+</head>
+<body>
+    <input type="text" id="inputText" placeholder="Enter text">
+    <button id="addButton">Add to List</button>
+    <ul id="list"></ul>
+    <script>
+        let button = document.getElementById("addButton");
+        let input = document.getElementById("inputText");
+        let list = document.getElementById("list");
+        button.addEventListener("dblclick", function() {
+            if (input.value.trim() !== "") {
+                let li = document.createElement("li");
+                li.textContent = input.value;
+                list.appendChild(li);
+                input.value = "";
+            }
+        });
+    </script>
+</body>
+</html>

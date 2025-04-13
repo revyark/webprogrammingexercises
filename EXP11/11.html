@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Table</title>
+</head>
+<body>
+    <button onclick="createTable()">Create Table</button>
+    <div id="tableContainer"></div>
+    <script>
+        function createTable() {
+            let table = document.createElement("table");
+            table.border = "1";
+            for (let i = 0; i < 3; i++) {
+                let row = table.insertRow();
+                for (let j = 0; j < 3; j++) {
+                    let cell = row.insertCell();
+                    cell.innerText = `Row ${i+1} Col ${j+1}`;
+                }
+            }
+            document.getElementById("tableContainer").appendChild(table);
+        }
+    </script>
+</body>
+</html>
